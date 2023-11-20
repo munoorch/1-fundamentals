@@ -52,13 +52,3 @@ jobs:
         run: |
           cd api
           php artisan test
-      - name: Copy SSH key
-        run: |
-          echo "${{ secrets.SSH_KEY }}" >> ./id_rsa
-          chmod 600 id_rsa
-      - name: Run deploy script
-        run: |
-          scp -C -o StrictHostKeyChecking=no -i ./id_rsa ./deployment/bin/deploy.sh ${{ secrets.SSH_CONNECTION_TESTING }}:/home/martin/deploy.sh
-          scp -C -o StrictHostKeyChecking=no -i ./id_rsa ./id_rsa ${{ secrets.SSH_CONNECTION_TESTING }}:/home/martin/.ssh/id_rsa
-          ssh -tt -o StrictHostKeyChecking=no -i ./id_rsa ${{ secrets.SSH_CONNECTION_TESTING }} "chown martin:martin /home/martin/deploy.sh && chmod +x /home/martin/deploy.sh"
-          ssh -tt -o StrictHostKeyChecking=no -i ./id_rsa ${{ secrets.SSH_CONNECTION_TESTING }} "/home/martin/deploy.sh ${{ secrets.MYSQL_PASSWORD }}"
