@@ -37,7 +37,8 @@ jobs:
           cd api
           php artisan key:generate
       - name: Directory Permissions
-        run: mysqladmin ping|
+        run: |
+          mysqladmin ping
           cd api
           chmod -R 777 storage bootstrap/cache
       - name: Run tests
