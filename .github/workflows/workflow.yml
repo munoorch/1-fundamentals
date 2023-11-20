@@ -27,7 +27,7 @@ jobs:
 
       - name: Grant permissions to 'runner' user
         run: |
-          sudo mysql -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'runner'@'localhost' IDENTIFIED BY '';"
+          sudo mysql -u root -p root -e "GRANT ALL PRIVILEGES ON *.* TO 'runner'@'localhost' IDENTIFIED BY '';"
       - name: Use node16 instead of node12
         uses: actions/setup-node@v3
         with:
