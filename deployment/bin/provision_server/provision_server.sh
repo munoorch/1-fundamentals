@@ -28,12 +28,12 @@ rm -f /usr/bin/npm
 rm -f /usr/bin/npx
 
 cd /usr/lib
-wget https://nodejs.org/dist/v14.21.3/node-v14.21.3-linux-x64.tar.xz
-tar xf node-v14.21.3-linux-x64.tar.xz
-rm node-v14.21.3-linux-x64.tar.xz
-mv ./node-v14.21.3-linux-x64/bin/node /usr/bin/node
-ln -s /usr/lib/node-v14.21.3-linux-x64/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
-ln -s /usr/lib/node-v14.21.3-linux-x64/lib/node_modules/npx/bin/npx-cli.js /usr/bin/npx
+wget https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.xz
+tar xf node-v20.10.0-linux-x64.tar.xz
+rm node-v20.10.0-linux-x64.tar.xz
+mv ./node-v20.10.0-linux-x64/bin/node /usr/bin/node
+ln -s /usr/lib/node-v20.10.0-linux-x64/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
+ln -s /usr/lib/node-v20.10.0-linux-x64/lib/node_modules/npx/bin/npx-cli.js /usr/bin/npx
 
 # php 8.1
 add-apt-repository ppa:ondrej/php -y
